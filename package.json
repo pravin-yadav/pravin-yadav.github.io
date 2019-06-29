@@ -7,7 +7,7 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "webpack",
 		"predeploy": "npm run build",
-		"deploy": "gh-pages -d build -b master",
+		"deploy": "gh-pages -d public -b master",
 		"dev": "webpack-dev-server --content-base public --hot"
 	},
 	"keywords": [],
