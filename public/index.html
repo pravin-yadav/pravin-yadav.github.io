@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ball & Brick</title>
+  <style>
+  .container{
+    width: 50%;
+    margin: 0 auto
+  }
+  #gameScreen{
+    border: 1px solid #000000
+  }
+  img{
+    display: none
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img id="img-ball" src="./assets/images/ball.png" />
+    <img id="img-brick" src="./assets/images/brick.png" />
+    <canvas id="gameScreen" width="990" height="800"></canvas>
+  </div>
+  <script src="bundle.js"></script>
+</body>
+</html>

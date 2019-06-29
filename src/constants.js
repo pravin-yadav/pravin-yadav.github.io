@@ -1,0 +1,7 @@
+export const GAME_STATE = {
+	GAME_PAUSED: 0,
+	GAME_RUNNING: 1,
+	GAME_MENU: 2,
+	GAME_OVER: 3,
+	GAME_NEW_LEVEL: 4
+};
