@@ -42,7 +42,7 @@ export default class Game {
 		)
 			return;
 
-		if (this.bricks.length === 0 && this.gameState !== GAME_STATE.GAME_RESTART) {
+		if (this.bricks.length === 0) {
 			this.currentLevel++;
 			this.gameState = GAME_STATE.GAME_NEW_LEVEL;
 			this.start();
