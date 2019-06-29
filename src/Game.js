@@ -20,7 +20,12 @@ export default class Game {
 	}
 
 	start = () => {
-		if (this.gameState !== GAME_STATE.GAME_MENU && this.gameState !== GAME_STATE.GAME_NEW_LEVEL) return;
+		if (
+			this.gameState !== GAME_STATE.GAME_MENU &&
+			this.gameState !== GAME_STATE.GAME_NEW_LEVEL &&
+			this.gameState !== GAME_STATE.GAME_RESTART
+		)
+			return;
 		this.bricks = buildLevel(this, this.levels[this.currentLevel]);
 		this.ball.reset();
 		this.paddle.reset();
@@ -37,7 +42,7 @@ export default class Game {
 		)
 			return;
 
-		if (this.bricks.length === 0) {
+		if (this.bricks.length === 0 && this.gameState !== GAME_STATE.GAME_RESTART) {
 			this.currentLevel++;
 			this.gameState = GAME_STATE.GAME_NEW_LEVEL;
 			this.start();
@@ -79,7 +84,7 @@ export default class Game {
 			ctx.textAlign = 'center';
 			ctx.fillText('GAME OVER', this.gameWidth / 2, this.gameHeight / 2);
 			ctx.font = '20px Arial';
-			ctx.fillText('Press F5 To Start The Game', this.gameWidth / 2, 780);
+			ctx.fillText('Press SPACEBAR To Play Again', this.gameWidth / 2, 780);
 		}
 
 		if (this.gameState === GAME_STATE.GAME_RUNNING) {
@@ -96,5 +101,10 @@ export default class Game {
 		else {
 			this.gameState = GAME_STATE.GAME_PAUSED;
 		}
+	};
+	restart = () => {
+		this.gameState = GAME_STATE.GAME_RESTART;
+		this.lifeLine = 3;
+		this.start();
 	};
 }

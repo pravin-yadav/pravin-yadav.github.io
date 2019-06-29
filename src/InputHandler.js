@@ -15,7 +15,9 @@ export default class InputHandler {
 					game.gameState !== GAME_STATE.GAME_OVER && game.gameState !== GAME_STATE.GAME_MENU && game.togglePause();
 					break;
 				case 32:
-					game.start();
+
+						game.gameState === GAME_STATE.GAME_OVER ? game.restart() :
+						game.start();
 					break;
 				default:
 					break;
