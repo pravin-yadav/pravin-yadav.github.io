@@ -67,7 +67,7 @@ export default class Game {
 			ctx.font = '40px Arial';
 			ctx.fillStyle = '#FFF';
 			ctx.textAlign = 'center';
-			ctx.fillText('Press SPACEBAR To Start The Game', this.gameWidth / 2, this.gameHeight / 2);
+			ctx.fillText('Press SPACEBAR To Start', this.gameWidth / 2, this.gameHeight / 2);
 		}
 
 		if (this.gameState === GAME_STATE.GAME_OVER) {
